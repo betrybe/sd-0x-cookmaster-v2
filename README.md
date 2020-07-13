@@ -27,13 +27,22 @@ A autenticação deverá ser feita via `JWT`.
 
 O código para cadastro de usuários deve ser criado por você utilizando os conhecimentos adiquiridos nesse bloco.
 
-Você deve utilizar o banco de dados `MongoDB` para gerenciar os dados.
+Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload de arquivos fornecido pelo `multer`.
 
-Deverá ser possível adicionar imagem à uma receita, utilizando o upload de arquivos fornecido pelo `multer`.
-
-⚠️ **Dica Importante** ⚠️:
+⚠️ **Dicas Importantes** ⚠️:
 
 - Não haverá front-end nesse projeto, portanto não se preocupe com a visualização, mas apenas com as funcionalidades e organização do código.
+
+- Para permitir que as imagens sejam acessadas através da API, você deve utilizar o middleware `static` do express, da seguinte forma:
+
+  ```js
+  const path = require('path');
+  // ...
+  // /images é o caminho da API onde as imagens estarão disponíveis
+  // path.join(__dirname, 'uploads') é o caminho da pasta onde o multer salva suas imagens ao realizar o upload
+  app.use('/images', express.static(path.join(__dirname, 'uploads')));
+  // ...
+  ```
 
 ---
 
@@ -53,13 +62,23 @@ Deverá ser possível adicionar imagem à uma receita, utilizando o upload de ar
 
 - A rota deve ser (`/user`).
 
-- Um usuário precisa ter os campos Email, Senha, Nome e Role.
+- No banco um usuário precisa ter os campos Email, Senha, Nome e Role.
 
-- Todos os campos são obrigatórios, com exceção do Role.
+- Para criar um usuário através da API, todos os campos são obrigatórios, com exceção do Role.
 
 - O campo Email deve ser único.
 
-- Por padrão, as requisições pra esse endpoint devem adicionar um campo Role com o atributo _user_ ao usuário criado.
+- Usuários criados através desse endpoint devem ter seu campo Role com o atributo _user_, ou seja, devem ser usuários comuns, e não admins.
+
+- O body da requisição deve conter o seguinte formato:
+
+  ```json
+  {
+    "name": "string",
+    "email": "string",
+    "password": "string"
+  }
+  ```
 
 ### 3 - Crie um endpoint para o login de usuários
 
@@ -69,33 +88,50 @@ Deverá ser possível adicionar imagem à uma receita, utilizando o upload de ar
 
 - Um token `JWT` deve ser gerado e retornado caso haja sucesso no login. No seu payload deve estar presente o id, email e role do usuário.
 
+- O body da requisição deve conter o seguinte formato:
+
+  ```json
+  {
+    "email": "string",
+    "password": "string"
+  }
+  ```
+
 ### 4 - Crie um endpoint para o cadastro de receitas
 
 - A rota deve ser (`/recipes`).
 
 - A receita só pode ser criada caso o usuário esteja logado e o token `JWT` validado.
 
-- A receita deve ter os campos Nome, Ingredientes, Modo de preparo e Autor, que serão recebidos pela requisição.
+- No banco, a receita deve ter os campos Nome, Ingredientes, Modo de preparo, URL da imagem e Id do Autor.
+
+- Nome, ingredientes e modo de preparo devem ser recebidos no corpo da requisição, com o seguinte formato:
+
+  ```json
+  {
+    "name": "string",
+    "ingredients": "string",
+    "preparation": "string"
+  }
+  ```
 
 - O campo dos ingredientes pode ser um campo de texto aberto.
 
-- Deve existir também o campo userID, que terá o id relativo ao usuário logado. Lembre-se do campo `payload` do `JWT`.
+- O campo ID do autor, deve ser preenchido automaticamente com o ID do usuário logado, que deve ser extraído do token JWT.
+
+- A URL da imagem será preenchida através de outro endpoint
 
 ### 5 - Crie um endpoint para a listagem de receitas
 
 - A rota deve ser (`/recipes`).
 
-- As receitas só podem ser acessadas caso o usuário esteja logado e o token `JWT` validado.
-
-- Apenas as receitas pertencentes àquele usuário logado poderão ser listadas.
+- A rota pode ser acessada por usuários logados ou não
 
 ### 6 - Crie um endpoint para visualizar uma receita específica
 
 - A rota deve ser (`/recipes/:id`).
 
-- A receita só pode ser acessada caso o usuário esteja logado e o token `JWT` validado.
-
-- A receita só pode ser retornada caso pertença ao usuário logado.
+- A rota pode ser acessada por usuários logados ou não
 
 ### 7 - Crie um endpoint para a edição de uma receita
 
@@ -103,9 +139,17 @@ Deverá ser possível adicionar imagem à uma receita, utilizando o upload de ar
 
 - A receita só pode ser atualizada caso o usuário esteja logado e o token `JWT` validado.
 
-- A receita só pode ser atualizada caso pertença ao usuário logado.
+- A receita só pode ser atualizada caso pertença ao usuário logado, ou caso esse usuário seja um admin.
 
-- O corpo da requisição deve ter os campos Nome, Ingredientes, Modo de preparo e Autor.
+- O corpo da requisição deve receber o seguinte formato:
+
+  ```json
+  {
+    "name": "string",
+    "ingredients": "string",
+    "preparation": "string"
+  }
+  ```
 
 ### 8 - Crie um endpoint para a exclusão de uma receita
 
@@ -113,8 +157,7 @@ Deverá ser possível adicionar imagem à uma receita, utilizando o upload de ar
 
 - A receita só pode ser excluída caso o usuário esteja logado e o token `JWT` validado.
 
-- A receita só pode ser excluída caso pertença ao usuário logado.
-
+- A receita só pode ser excluída caso pertença ao usuário logado, ou caso o usuário logado seja um admin.
 
 ### 9 - Crie um endpoint para a adição de uma imagem a uma receita
 
@@ -122,15 +165,21 @@ Deverá ser possível adicionar imagem à uma receita, utilizando o upload de ar
 
 - A receita só pode ser atualizada caso o usuário esteja logado e o token `JWT` validado.
 
-- A receita só pode ser atualizada caso pertença ao usuário logado.
+- A receita só pode ser atualizada caso pertença ao usuário logado ou caso o usuário logado seja admin.
 
 - O upload da imagem deverá ser feito utilizando o `Multer`.
+
+- O nome do arquivo deve ser o ID da receita, sem extensão. As imagens devem estar disponíveis através da rota `/images/<id-da-receita>` na API.
+
+- A URL completa para acessar a imagem através da API deve ser gravada no banco de dados, junto com os dados da receita.
 
 ### 10 - Permissões do usuário admin
 
 - Por padrão, deve existir no banco de dados ao menos um usuário com a Role _admin_.
 
 - Esse usuário tem o poder de criar, deletar, atualizar ou remover qualquer receita, independente de quem a cadastrou.
+
+- Crie um script na raiz do seu projeto com a extensão `.sql`, caso utilize o MySQL, ou `.js`, caso utilize o mongodb. Este arquivo deve inicializar o banco de dados e cadastrar um usuário admin com o login `root` e a senha `admin`.
 
 ## Bônus
 
@@ -140,9 +189,21 @@ Deverá ser possível adicionar imagem à uma receita, utilizando o upload de ar
 
 - Só será possível adicionar um admin caso esta ação esteja sendo feita por outro admin, portanto, deve ser validado se há um admin logado.
 
-- O corpo da requisição precisa ter os campos Email, Senha e Nome.
-
 - Por padrão, as requisições pra esse endpoint devem adicionar a Role com o atributo _admin_ ao usuário criado.
+
+- O corpo da requisição deve ter o seguinte formato:
+
+  ```json
+  {
+    "name": "string",
+    "email": "string",
+    "password": "string"
+  }
+  ```
+
+### 12 - Utilize o MongoDB como banco de dados
+
+O projeto Cookmaster que você realizou anteriormente utilizava o MySQL como banco de dados. Altere seus `Model`s para que sua aplicação utilize o MongoDB ao invés do MySQL.
 
 ---
 
