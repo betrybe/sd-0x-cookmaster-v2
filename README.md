@@ -1,8 +1,63 @@
-# Boas vindas ao projeto Cookmaster V2!
+# Boas vindas ao repositório do projeto Cookmaster V2!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um Pull Request para colocar seus códigos.
+
+---
+
+## Instruções para entregar seu projeto:
+
+### ANTES DE COMEÇAR A DESENVOLVER:
+
+1. Clone o repositório
+  * `git clone https://github.com:tryber/sd-0x-cookmaster-v2.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd sd-0x-cookmaster-v2`
+
+2. Instale as dependências [**Caso existam**]
+  * `npm install`
+
+3. Crie uma branch a partir da branch `master`
+  * Verifique que você está na branch `master`
+    * Exemplo: `git branch`
+  * Se não estiver, mude para a branch `master`
+    * Exemplo: `git checkout master`
+  * Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
+    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+    * Exemplo: `git checkout -b joaozinho-sd-0x-cookmaster-v2`
+
+4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+  * Verifique que as mudanças ainda não estão no _stage_
+    * Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
+  * Adicione o novo arquivo ao _stage_ do Git
+      * Exemplo:
+        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+        * `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
+  * Faça o `commit` inicial
+      * Exemplo:
+        * `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
+        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+5. Adicione a sua branch com o novo `commit` ao repositório remoto
+  * Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-cookmaster-v2`
+
+6. Crie um novo `Pull Request` _(PR)_
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-cookmaster-v2/pulls)
+  * Clique no botão verde _"New pull request"_
+  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+  * Clique no botão verde _"Create pull request"_
+  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+  * **Não se preocupe em preencher mais nada por enquanto!**
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-cookmaster-v2/pulls) e confira que o seu _Pull Request_ está criado
+
+---
+
+# Entregáveis
+
+Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+
+Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
 ---
 
@@ -48,9 +103,21 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-## Requisitos do projeto
+### Data de Entrega
 
-### 1 - Todos os seus endpoints devem estar no padrão REST
+O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
+
+---
+
+## Requisitos Obrigatórios:
+
+## ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
+
+### 👀Observações importantes:
+
+O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
+
+###  Todos os seus endpoints devem estar no padrão REST
 
 - Use os verbos HTTP adequados para cada operação.
 
@@ -60,7 +127,76 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - Retorne os códigos de status corretos (recurso criado, erro de validação, autorização, etc).
 
-### 2 - Crie um endpoint para o cadastro de usuários
+###  Utilize o MongoDB como banco de dados
+
+O projeto Cookmaster que você realizou anteriormente utilizava o MySQL como banco de dados. Altere seus `Model`s para que sua aplicação utilize o MongoDB ao invés do MySQL.
+
+---
+
+## ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
+
+Há um arquivo `index.js` no repositório. Não remova, nele, o seguinte trecho de código:
+
+```javascript
+app.get('/', (request, response) => {
+  response.send();
+});
+```
+
+Isso está configurado para o avaliador funcionar.
+
+### Conexão com o Banco:
+
+A conexão do banco local devera conter os seguintes parâmetros:
+
+```javascript
+const MONGO_DB_URL = 'mongodb://localhost:27017/Cookmaster';
+const DB_NAME = 'Cookmaster';
+```
+
+Para o avaliador funcionar altere a conexão do banco para:
+
+```javascript
+const MONGO_DB_URL = 'mongodb://mongodb:27017/Cookmaster';
+const DB_NAME = 'Cookmaster';
+```
+
+###  Tabelas
+
+O banco terá duas tabelas: usuários e receitas 
+
+A tabela de usuários deverá ter o seguinte nome: `users`
+
+Os campos da tabela `users` terão esse formato:
+
+```json
+{ "name" : "Erick Jacquin", "email" : "erickjacquin@gmail.com", "password" : "12345678", "role" : "user" }
+```
+
+A resposta do insert deve retornar após a criação é essa:
+
+```json
+{ "_id" : ObjectId("5f46914677df66035f61a355"), "name" : "Erick Jacquin", "email" : "erickjacquin@gmail.com", "password" : "12345678", "role" : "user" }
+```
+(O _id será gerado automaticamente pelo mongodb)
+
+A tabela de receitas deverá ter o seguinte nome: `recipes`
+
+Os campos da tabela `recipes` terão esse formato:
+
+```json
+{ "name" : "Receita do Jacquin", "ingredients" : "Frango", "preparation" : "10 minutos no forno" }
+```
+
+A resposta do insert deve retornar após a criação é essa:
+
+```json
+{ "_id" : ObjectId("5f46919477df66035f61a356"), "name" : "string", "ingredients" : "string", "preparation" : "string", "userId" : ObjectId("5f46914677df66035f61a355") }
+```
+(O _id será gerado automaticamente pelo mongodb, e o userId será gerado com o id do usuário que criou a receita)
+
+
+### 1 - Crie um endpoint para o cadastro de usuários
 
 - A rota deve ser (`/users`).
 
@@ -82,11 +218,58 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   }
   ```
 
-### 3 - Crie um endpoint para o login de usuários
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que o campo "name" é obrigatório]**
+
+Se o usuário não tiver o campo name o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Usuário sem Nome](./public/usuariosemnome.png)
+
+**[Será validado que o campo "email" é obrigatório]**
+
+Se o usuário não tiver o campo email o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Usuário sem Email](./public/usuariosememail.png)
+
+**[Será validado que não é possível cadastrar usuário com o campo email inválido]**
+
+Se o usuário tiver o campo email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Email Inválido](./public/campoemailinvalido.png)
+
+**[Será validado que o campo "senha" é obrigatório]**
+
+Se o usuário não tiver o campo senha o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Usuário sem Senha](./public/usuariosemsenha.png)
+
+**[Será validado que o campo "email" é único]**
+
+Se o usuário cadastrar o campo email com um email que já existe, o resultado retornado deverá ser conforme exibido abaixo, com um status http `409`:
+
+![Email já Usado](./public/emailjausado.png)
+
+**[Será validado que é possível cadastrar usuário com sucesso]**
+
+Cadastrar usuário com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
+
+![Usuário Cadastrado](./public/usuariocriadocomsucesso.png)
+
+**[Será validado que é possível ao cadastrar usuário, o valor do campo "role" tenha o valor "user"]**
+
+Se o usuário criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
+
+![Campo Role](./public/validarrole.png)
+
+
+### 2 - Crie um endpoint para o login de usuários
 
 - A rota deve ser (`/login`).
 
 - A rota deve receber os campos Email e Senha e esses campos devem ser validados no banco de dados.
+
+- Na configuração do `JWT` não use variáveis de ambientes para não ter conflito com o avaliador 
 
 - Um token `JWT` deve ser gerado e retornado caso haja sucesso no login. No seu payload deve estar presente o id, email e role do usuário.
 
@@ -99,7 +282,39 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   }
   ```
 
-### 4 - Crie um endpoint para o cadastro de receitas
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que o campo "email" é obrigatório]**
+
+Se o login não tiver o campo email o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Usuário sem Senha](./public/loginsememail.png)
+
+**[Será validado que o campo "password" é obrigatório]**
+
+Se o login não tiver o campo password o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Usuário sem Senha](./public/loginsemsenha.png)
+
+**[Será validado que não é possível fazer login com um email inválido]**
+
+Se o login tiver o email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Email Inválido](./public/loginemailinvalido.png)
+
+**[Será validado que não é possível fazer login com uma senha inválida]**
+
+Se o login tiver a senha inválida o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Senha Inválida](./public/loginsenhainvalida.png)
+
+**[Será validado que é possível fazer login com sucesso]**
+
+Se foi feito login com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Login com Sucesso](./public/logincomsucesso.png)
+
+### 3 - Crie um endpoint para o cadastro de receitas
 
 - A rota deve ser (`/recipes`).
 
@@ -123,19 +338,85 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - A URL da imagem será preenchida através de outro endpoint
 
-### 5 - Crie um endpoint para a listagem de receitas
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que não é possível cadastrar receita sem o campo "name"]**
+
+Se a receita não tiver o campo name o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Receita sem nome](./public/receitasemnome.png)
+
+**[Será validado que não é possível cadastrar receita sem o campo "ingredients"]**
+
+Se a receita não tiver o campo ingredients o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Receita sem ingrediente](./public/receitasemingrediente.png)
+
+**[Será validado que não é possível cadastrar receita sem o campo "preparation"]**
+
+Se a receita não tiver o campo preparation o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
+
+![Receita sem preparo](./public/receitasempreparo.png)
+
+**[Será validado que não é possível cadastrar uma receita com token invalido]**
+
+Se a receita não tiver o token inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Receita com token inválido](./public/receitatokeninvalido.png)
+
+**[Será validado que é possível cadastrar uma receita com sucesso]**
+
+Cadastrar a receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
+
+![Receita com Sucesso](./public/receitacomsucesso.png)
+
+### 4 - Crie um endpoint para a listagem de receitas
 
 - A rota deve ser (`/recipes`).
 
 - A rota pode ser acessada por usuários logados ou não
 
-### 6 - Crie um endpoint para visualizar uma receita específica
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que é possível listar todas as receitas sem estar autenticado]**
+
+Listar receitas com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Receita com Sucesso](./public/listarreceitas.png)
+
+**[Será validado que é possível listar todas as receitas estando autenticado]**
+
+Listar receitas com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Receita com Sucesso](./public/listarreceitas.png)
+
+### 5 - Crie um endpoint para visualizar uma receita específica
 
 - A rota deve ser (`/recipes/:id`).
 
 - A rota pode ser acessada por usuários logados ou não
 
-### 7 - Crie um endpoint para a edição de uma receita
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que é possível listar uma receita especifica sem estar autenticado]**
+
+Listar uma receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Listar uma Receita](./public/listarumareceita.png)
+
+**[Será validado que é possível listar uma receita especifica estando autenticado]**
+
+Listar uma receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Listar uma Receita](./public/listarumareceita.png)
+
+**[Será validado que não é possível listar uma receita que não existe]**
+
+Listar uma receita que não existe, o resultado retornado deverá ser conforme exibido abaixo, com um status http `404`:
+
+![Listar uma Receita inexistente](./public/receitanaoencontrada.png)
+
+### 6 - Crie um endpoint para a edição de uma receita
 
 - A rota deve ser (`/recipes/:id`).
 
@@ -153,7 +434,33 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   }
   ```
 
-### 8 - Crie um endpoint para a exclusão de uma receita
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que não é possível editar receita sem estar autenticado]**
+
+Editar receita sem autenticação, o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![editar uma Receita sem autenticação](./public/editarsemautenticacao.png)
+
+**[Será validado que não é possível editar receita com token inválido]**
+
+Editar receita com token inválido, o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Editar uma Receita com token inválido](./public/editartokeninvalido.png)
+
+**[Será validado que é possível editar receita estando autenticado]**
+
+Editar uma receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Editar uma Receita](./public/editarcomsucesso.png)
+
+**[Será validado que é possível editar receita com usuário admin]**
+
+Editar uma receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Editar uma Receita](./public/editarcomsucesso.png)
+
+### 7 - Crie um endpoint para a exclusão de uma receita
 
 - A rota deve ser (`/recipes/:id`).
 
@@ -161,7 +468,27 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - A receita só pode ser excluída caso pertença ao usuário logado, ou caso o usuário logado seja um admin.
 
-### 9 - Crie um endpoint para a adição de uma imagem a uma receita
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que não é possível excluir receita sem estar autenticado]**
+
+Excluir uma receita sem autenticação, o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Excluir uma Receita sem autenticação](./public/excluirsemautenticacao.png)
+
+**[Será validado que é possível excluir receita estando autenticado]**
+
+Excluir uma receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `204`:
+
+![Excluir uma Receita](./public/excluircomsucesso.png)
+
+**[Será validado que é possível excluir receita com usuário admin]**
+
+Excluir uma receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `204`:
+
+![Excluir uma Receita](./public/excluircomsucesso.png)
+
+### 8 - Crie um endpoint para a adição de uma imagem a uma receita
 
 - A rota deve ser (`/recipes/:id/image/`).
 
@@ -179,7 +506,33 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - A URL completa para acessar a imagem através da API deve ser gravada no banco de dados, junto com os dados da receita.
 
-### 10 - Permissões do usuário admin
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que é possível enviar foto com usuário autenticado]**
+
+Adicionar uma foto na receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Foto Autenticada](./public/fotocomsucesso.png)
+
+**[Será validado que ao enviar foto, o nome da imagem é alterada para o id da receita]**
+
+Adicionar uma foto na receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Foto Autenticada](./public/fotocomsucesso.png)
+
+**[Será validado que não é possível enviar foto sem estar autenticado]**
+
+Adicionar uma foto na receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
+
+![Excluir uma Receita](./public/fotonaoautenticada.png)
+
+**[Será validado que é possível enviar foto com usuário admin]**
+
+Adicionar uma foto na receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+
+![Foto Autenticada](./public/fotocomsucesso.png)
+
+### 9 - Permissões do usuário admin
 
 - Por padrão, deve existir no banco de dados ao menos um usuário com a Role _admin_.
 
@@ -187,9 +540,15 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - Crie um script na raiz do seu projeto com a extensão `.sql`, caso utilize o MySQL, ou `.js`, caso utilize o mongodb. Este arquivo deve inicializar o banco de dados e cadastrar um usuário admin com o login `root` e a senha `admin`.
 
+### Além disso,as seguintes verificações serão feitas:
+
+**[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root]**
+
+Será validado no arquivo `seed.js` exite a query para criar um usuário root
+
 ## Bônus
 
-### 11 - Cadastramento de admin
+### 10 - Cadastramento de admin
 
 - A rota deve ser (`/users/admin`).
 
@@ -207,66 +566,29 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   }
   ```
 
-### 12 - Utilize o MongoDB como banco de dados
+### Além disso,as seguintes verificações serão feitas:
 
-O projeto Cookmaster que você realizou anteriormente utilizava o MySQL como banco de dados. Altere seus `Model`s para que sua aplicação utilize o MongoDB ao invés do MySQL.
+**[Será validado que não é possível cadastrar um usuário admin, sem estar autenticado como um usuário admin]**
 
----
+Se o usuário admin não é criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `403`:
 
-## Instruções para entregar seu projeto:
+![Criar usuário sem ser admin](./public/soadmincria.png)
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+**[Será validado que é possível cadastrar um usuário admin]**
 
-1. Clone o repositório
-  - `git clone git@github.com:tryber/sd-0x-project-cookmaster-v2.git`.
-  - Entre na pasta do repositório que você acabou de clonar:
-    - `cd sd-0x-project-cookmaster-v2`
+Se o usuário admin criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
 
-2. Instale as dependências
-  - `npm install`
-
-3. Crie uma branch a partir da branch `master`
-  - Verifique que você está na branch `master`
-    - Exemplo: `git branch`
-  - Se não estiver, mude para a branch `master`
-    - Exemplo: `git checkout master`
-  - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
-    - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    - Exemplo: `git checkout -b joaozinho-cookmaster-v2`
-
-4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  - Verifique que as mudanças ainda não estão no _stage_
-    - Exemplo: `git status` (deve aparecer listado o arquivo alterado em vermelho)
-  - Adicione o arquivo alterado ao _stage_ do Git
-    - Exemplo:
-      - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-      - `git status` (deve aparecer listado o arquivo adicionado em verde)
-  - Faça o `commit` inicial
-    - Exemplo:
-      - `git commit -m 'Iniciando o projeto Cookmaster v2'` (fazendo o primeiro commit)
-      - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  - Usando o exemplo anterior: `git push -u origin joaozinho-cookmaster-v2`
-
-6. Crie um novo `Pull Request` _(PR)_
-  - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-blockxx-cookmaster-v2/pulls)
-  - Clique no botão verde _"New pull request"_
-  - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  - Clique no botão verde _"Create pull request"_
-  - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  - **Não se preocupe em preencher mais nada por enquanto!**
-  - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-blockxx-cookmaster-v2/pulls) e confira que o seu _Pull Request_ está criado
+![Criar admin](./public/criaradmin.png)
 
 ---
 
 ### DURANTE O DESENVOLVIMENTO
 
-- Faça `commits` das alterações que você fizer no código regularmente
+* Faça `commits` das alterações que você fizer no código regularmente
 
-- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
 
-- Os comandos que você utilizará com mais frequência são:
+* Os comandos que você utilizará com mais frequência são:
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
@@ -275,23 +597,24 @@ O projeto Cookmaster que você realizou anteriormente utilizava o MySQL como ban
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
-Para **"entregar"** seu projeto, siga os passos a seguir:
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
-- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-02`
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
 
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
 ---
 
 ### REVISANDO UM PULL REQUEST
 
-⚠⚠⚠
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
-À medida que você e os outros alunos forem entregando os projetos, vocês serão alertados **via Slack** para também fazer a revisão dos _Pull Requests_ dos seus colegas. Fiquem atentos às mensagens do _"Pull Reminders"_ no _Slack_!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+#VQV
