@@ -5,8 +5,6 @@ const { MongoClient } = require('mongodb');
 const mongoDbUrl = 'mongodb://localhost:27017/Cookmaster';
 const url = 'http://localhost:3000';
 
-const fs = require('fs');
-
 describe.only('6 - Permissões do usuário admin', () => {
   let connection;
   let db;
@@ -38,8 +36,6 @@ describe.only('6 - Permissões do usuário admin', () => {
           const { json } = responseLogin;
           expect(json.token).not.toBeNull();
         });
-    //const fileSeed = fs.readFileSync('seed.js', 'utf8');
-    //expect(fileSeed).toContain('db.users.insertOne({ name: \'admin\', email: \'root@email.com\', password: \'admin\', role: \'admin\' });');
   });
 });
 
