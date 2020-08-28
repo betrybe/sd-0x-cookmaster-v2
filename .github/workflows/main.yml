@@ -22,6 +22,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/checkout@v2
         if: steps.wait-for-build.outputs.conclusion == 'success'
+      - run: docker -v 
       - name: Evaluator step
         id: evaluator
         uses: betrybe/jest-evaluator-action@v6
