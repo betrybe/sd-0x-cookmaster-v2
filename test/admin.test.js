@@ -5,7 +5,7 @@ const { MongoClient } = require('mongodb');
 const mongoDbUrl = 'mongodb://localhost:27017/Cookmaster';
 const url = 'http://localhost:3000';
 
-describe.only('6 - Permissões do usuário admin', () => {
+describe('6 - Permissões do usuário admin', () => {
   let connection;
   let db;
 
@@ -25,17 +25,17 @@ describe.only('6 - Permissões do usuário admin', () => {
   
   it('Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root', async () => {
     shell.exec('mongo < ./seed.js');
-      return frisby
-        .post(`${url}/login`,
-          {
-            email: 'root@email.com',
-            password: 'admin',
-          })
-        .expect('status', 200)
-        .then((responseLogin) => {
-          const { json } = responseLogin;
-          expect(json.token).not.toBeNull();
-        });
+    return frisby
+      .post(`${url}/login`,
+        {
+          email: 'root@email.com',
+          password: 'admin',
+        })
+      .expect('status', 200)
+      .then((responseLogin) => {
+        const { json } = responseLogin;
+        expect(json.token).not.toBeNull();
+      });
   });
 });
 

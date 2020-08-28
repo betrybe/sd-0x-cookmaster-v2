@@ -362,7 +362,7 @@ Se a receita não tiver o token válido o resultado retornado deverá ser confor
 
 **[Será validado que é possível cadastrar uma receita com sucesso]**
 
-Cadastrar a receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
+O resultado retornado para cadastrar a receita com sucesso deverá ser conforme exibido abaixo, com um status http `201`:
 
 ![Receita com Sucesso](./public/receitacomsucesso.png)
 
@@ -392,7 +392,7 @@ O resultado retornado para listar receitas com sucesso deverá ser conforme exib
 
 - A rota pode ser acessada por usuários logados ou não
 
-### Além disso,as seguintes verificações serão feitas:
+### Além disso, as seguintes verificações serão feitas:
 
 **[Será validado que é possível listar uma receita específica sem estar autenticado]**
 
@@ -538,7 +538,7 @@ O resultado retornado para adicionar uma foto na receita com sucesso deverá ser
 
 **[Será validado que é possível enviar foto com usuário admin]**
 
-Adicionar uma foto na receita com sucesso, o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
+O resultado retornado para adicionar uma foto na receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Foto Autenticada](./public/fotocomsucesso.png)
 
