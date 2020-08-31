@@ -1,5 +1,5 @@
 const frisby = require('frisby');
-const shell = require('shelljs')
+const fs = require('fs');
 const { MongoClient } = require('mongodb');
 
 const mongoDbUrl = 'mongodb://localhost:27017/Cookmaster';
@@ -17,6 +17,10 @@ describe('6 - Permissões do usuário admin', () => {
     db = connection.db('Cookmaster');
     await db.collection('users').deleteMany({});
     await db.collection('recipes').deleteMany({});
+    const users = [
+      { name: 'admin', email: 'root@email.com', password: 'admin', role: 'admin' }
+    ];
+    await db.collection('users').insertMany(users);
   });
   
   afterAll(async () => {
@@ -24,8 +28,9 @@ describe('6 - Permissões do usuário admin', () => {
   });
   
   it('Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root', async () => {
-    shell.exec('mongo < ./seed.js');
-    return frisby
+    const fileSeed = fs.readFileSync('./seed.js', 'utf8');
+    expect(fileSeed).toContain('db.users.insertOne({ name: \'admin\', email: \'root@email.com\', password: \'admin\', role: \'admin\' });')
+    await frisby
       .post(`${url}/login`,
         {
           email: 'root@email.com',
