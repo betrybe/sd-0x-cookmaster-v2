@@ -422,7 +422,7 @@ O resultado retornado para listar uma receita que não existe deverá ser confor
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root]**
+**[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possivel fazer login]**
 
 Será validado no arquivo `seed.js` existe a query para criar um usuário root
 
