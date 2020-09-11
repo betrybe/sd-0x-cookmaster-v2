@@ -193,6 +193,8 @@ A resposta do insert para ser retornada após a criação é esta:
 ```
 (O _id será gerado automaticamente pelo mongodb, e o userId será gerado com o id do usuário que criou a receita)
 
+O projeto deve rodar na porta http://localhost/3000
+
 ### 1 - Crie um endpoint para o cadastro de usuários
 
 - A rota deve ser (`/users`).
