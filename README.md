@@ -360,7 +360,7 @@ Se a receita não tiver o campo "preparation" o resultado retornado deverá ser 
 
 Se a receita não tiver o token válido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
 
-![Receita com token inválido](./public/receitatokeninvalido.png)
+![Receita com token inválido](./public/cadastrarreceitatokeninvalido.png)
 
 **[Será validado que é possível cadastrar uma receita com sucesso]**
 
