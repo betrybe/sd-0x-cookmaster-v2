@@ -546,7 +546,7 @@ O resultado retornado para adicionar uma foto na receita com sucesso deverá ser
 
 ### 10 - Crie um endpoint para acessar a imagem de uma receita
 
-- As imagens devem estar disponíveis através da rota `/images/<id-da-receita>` na API.
+- As imagens devem estar disponíveis através da rota `/images/<id-da-receita>.jpeg` na API.
 
 ### Além disso, as seguintes verificações serão feitas:
 
