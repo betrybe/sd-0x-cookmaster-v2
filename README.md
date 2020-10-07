@@ -93,11 +93,11 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   ```js
   const path = require('path');
   // ...
-  
+
   // /images é o caminho da API onde as imagens estarão disponíveis
   // path.join(__dirname, 'uploads') é o caminho da pasta onde o multer salva suas imagens ao realizar o upload
   app.use('/images', express.static(path.join(__dirname, 'uploads')));
-  
+
   // ...
   ```
 
@@ -267,7 +267,7 @@ Se o usuário for criado com sucesso o resultado retornado deverá ser conforme 
 
 - A rota deve receber os campos Email e Senha e esses campos devem ser validados no banco de dados.
 
-- Na configuração do `JWT` não use variáveis de ambientes para não ter conflito com o avaliador. 
+- Na configuração do `JWT` não use variáveis de ambientes para não ter conflito com o avaliador.
 
 - Um token `JWT` deve ser gerado e retornado caso haja sucesso no login. No seu payload deve estar presente o id, email e role do usuário.
 
@@ -514,7 +514,7 @@ O resultado retornado para excluir uma receita com sucesso deverá ser conforme 
 
 - O upload da imagem deverá ser feito utilizando o `Multer`.
 
-- O nome do arquivo deve ser o ID da receita, sem extensão. As imagens devem estar disponíveis através da rota `/images/<id-da-receita>` na API.
+- O nome do arquivo deve ser o ID da receita.
 
 - A URL completa para acessar a imagem através da API deve ser gravada no banco de dados, junto com os dados da receita.
 
@@ -544,9 +544,22 @@ O resultado retornado para adicionar uma foto na receita com sucesso deverá ser
 
 ![Foto Autenticada](./public/fotocomsucesso.png)
 
+### 10 - Crie um endpoint para acessar a imagem de uma receita
+
+- As imagens devem estar disponíveis através da rota `/images/<id-da-receita>` na API.
+
+### Além disso, as seguintes verificações serão feitas:
+
+**[Será validado que é retornada uma imagem como resposta]**
+
+O resultado retornado deverá ser do tipo imagem, com um status http `200`:
+
+![Foto Autenticada](./public/imagemrecetornada.png)
+
+
 ## Bônus
 
-### 10 - Cadastramento de admin
+### 11 - Cadastramento de admin
 
 - A rota deve ser (`/users/admin`).
 
