@@ -22,14 +22,14 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
-  response.send();
-});
-app.use('/users', UserRouter);
-app.use('/recipes', RecipeRouter);
+  response.send()
+})
+app.use('/users', UserRouter)
+app.use('/recipes', RecipeRouter)
 
 app.post('/login', middlewares.validateLogin, userController.login);
 
-app.use(middlewares.errorHandler);
+app.use(middlewares.errorHandler)
 
 const { PORT = 3000 } = process.env;
 
