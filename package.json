@@ -4,9 +4,10 @@
   "description": "Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand  --detectOpenHandles --forceExit",
     "start": "node index.js",
-    "start:watch": "nodemon index.js"
+    "start:watch": "nodemon index.js",
+    "lint": "eslint --no-inline-config --ext .js,.jsx --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,7 @@
     "shelljs": "^0.8.4"
   },
   "devDependencies": {
-    "eslint": "^7.4.0",
+    "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0"
   }
