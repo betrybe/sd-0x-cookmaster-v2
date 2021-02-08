@@ -13,53 +13,23 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 # Sumário
 
 
-
 ---
 
-## Instruções para entregar seu projeto:
+# Habilidades
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+Neste projeto, você será capaz de:
 
-1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-0x-cookmaster.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-cookmaster`
+- Entender o que há por dentro de um token de autenticação;
 
-2. Instale as dependências [**Caso existam**]
-  * `npm install`
+- Gerar tokens a partir de informações como login e senha;
 
-3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-sd-0x-cookmaster`
+- Autenticar rotas do Express, usando o token JWT;
 
-4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
-  * Adicione o novo arquivo ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+- Fazer upload de arquivos em APIs REST;
 
-5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-cookmaster`
+- Salvar arquivos no servidor através de uma API REST;
 
-6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-cookmaster/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-cookmaster/pulls) e confira que o seu _Pull Request_ está criado
+- Consultar arquivos do servidor através de uma api REST.
 
 ---
 
@@ -112,13 +82,97 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-### Data de Entrega
+## Data de Entrega
 
-O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
+    - Serão `X` dias de projeto.
+    - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 
 ---
 
-## Requisitos Obrigatórios:
+# Instruções para entregar seu projeto
+
+## Antes de começar a desenvolver
+
+1. Clone o repositório
+
+- `git clone https://github.com/tryber/sd-0x-cookmaster.git`.
+- Entre na pasta do repositório que você acabou de clonar:
+  - `cd sd-0x-cookmaster`
+
+2. Instale as dependências [**Caso existam**]
+
+- `npm install`
+
+3. Crie uma branch a partir da branch `master`
+
+- Verifique que você está na branch `master`
+  - Exemplo: `git branch`
+- Se não estiver, mude para a branch `master`
+  - Exemplo: `git checkout master`
+- Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
+  - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+  - Exemplo: `git checkout -b joaozinho-sd-0x-cookmaster`
+
+4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+
+- Verifique que as mudanças ainda não estão no _stage_
+  - Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
+- Adicione o novo arquivo ao _stage_ do Git
+    - Exemplo:
+      - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+      - `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
+- Faça o `commit` inicial
+    - Exemplo:
+      - `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
+      - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+5. Adicione a sua branch com o novo `commit` ao repositório remoto
+
+- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-cookmaster`
+
+6. Crie um novo `Pull Request` _(PR)_
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-cookmaster/pulls)
+- Clique no botão verde _"New pull request"_
+- Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+- Clique no botão verde _"Create pull request"_
+- Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+- **Não se preocupe em preencher mais nada por enquanto!**
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-cookmaster/pulls) e confira que o seu _Pull Request_ está criado
+
+---
+
+## Durante o desenvolvimento
+
+- Faça `commits` das alterações que você fizer no código regularmente
+
+- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+- Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+---
+
+### Depois de terminar o desenvolvimento
+
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
+
+- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+
+  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+# Como desenvolver
 
 ## ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
 
@@ -203,6 +257,26 @@ A resposta do insert para ser retornada após a criação é esta:
 (O _id será gerado automaticamente pelo mongodb, e o userId será gerado com o id do usuário que criou a receita)
 
 O projeto deve rodar na porta http://localhost/3000
+
+---
+
+## Linter
+
+Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
+
+Este projeto já vem com as dependências relacionadas ao _linter_ configuradas no arquivos `package.json`.
+
+Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
+
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+---
+
+# Requisitos do projeto
+
+## Lista de requisitos
 
 ### 1 - Crie um endpoint para o cadastro de usuários
 
@@ -602,39 +676,18 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 ---
 
-### DURANTE O DESENVOLVIMENTO
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
-
-Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
-
-Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
----
-
-### REVISANDO UM PULL REQUEST
+# Revisando um pull request
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 #VQV
+
+---
+
+# Avisos finais
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
