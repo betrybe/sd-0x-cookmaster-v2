@@ -29,28 +29,17 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
     - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas)
     - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-1)
     - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-2)
     - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-3)
     - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-4)
     - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-5)
     - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-6)
     - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-7)
     - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-8)
     - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-9)
   - [Bônus](#bônus)
     - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
-    - [Além disso, as seguintes verificações serão feitas:](#além-disso-as-seguintes-verificações-serão-feitas-10)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
 
@@ -338,7 +327,7 @@ Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em exten
   }
   ```
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que o campo "name" é obrigatório]**
 
@@ -401,7 +390,7 @@ Se o usuário for criado com sucesso o resultado retornado deverá ser conforme 
   }
   ```
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que o campo "email" é obrigatório]**
 
@@ -457,7 +446,7 @@ Se foi feito login com sucesso o resultado retornado deverá ser conforme exibid
 
 - A URL da imagem será preenchida através de outro endpoint
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que não é possível cadastrar receita sem o campo "name"]**
 
@@ -495,7 +484,7 @@ O resultado retornado para cadastrar a receita com sucesso deverá ser conforme 
 
 - A rota pode ser acessada por usuários logados ou não
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que é possível listar todas as receitas sem estar autenticado]**
 
@@ -515,7 +504,7 @@ O resultado retornado para listar receitas com sucesso deverá ser conforme exib
 
 - A rota pode ser acessada por usuários logados ou não
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que é possível listar uma receita específica sem estar autenticado]**
 
@@ -543,7 +532,7 @@ Crie um arquivo `seed.js` na raiz do projeto com uma query do Mongo DB capaz de 
 
 **Obs.:** Esse usuário tem o poder de criar, deletar, atualizar ou remover qualquer receita, independente de quem a cadastrou. Isso será solicitado ao longo dos próximos requisitos.
 
-### Além disso, as seguintes verificações serão feitas:    
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possivel fazer login]**    
 
@@ -567,7 +556,7 @@ Será validado no arquivo `seed.js` existe a query para criar um usuário root
   }
   ```
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que não é possível editar receita sem estar autenticado]**
 
@@ -601,7 +590,7 @@ O resultado retornado para editar uma receita com sucesso deverá ser conforme e
 
 - A receita só pode ser excluída caso pertença ao usuário logado, ou caso o usuário logado seja um admin.
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que não é possível excluir receita sem estar autenticado]**
 
@@ -639,7 +628,7 @@ O resultado retornado para excluir uma receita com sucesso deverá ser conforme 
 
 - A URL completa para acessar a imagem através da API deve ser gravada no banco de dados, junto com os dados da receita.
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que é possível enviar foto com usuário autenticado]**
 
@@ -669,7 +658,7 @@ O resultado retornado para adicionar uma foto na receita com sucesso deverá ser
 
 - As imagens devem estar disponíveis através da rota `/images/<id-da-receita>.jpeg` na API.
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que é retornada uma imagem como resposta]**
 
@@ -698,7 +687,7 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
   }
   ```
 
-### Além disso, as seguintes verificações serão feitas:
+**Além disso, as seguintes verificações serão feitas:**
 
 - **[Será validado que não é possível cadastrar um usuário admin, sem estar autenticado como um usuário admin]**
 
