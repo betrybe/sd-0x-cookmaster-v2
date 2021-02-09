@@ -37,7 +37,7 @@ Neste projeto, você será capaz de:
 
 Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
 
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
+Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/fundamentals/git) sempre que precisar!
 
 ---
 
@@ -45,7 +45,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 Você vai desenvolver seu app utilizando a arquitetura MSC!
 
-Nesse novo projeto deverá ser possível fazer o cadastramento e login de usuário, onde apenas esse usúario poderá acessar, modificar e deletar as receitas que cadastrou.
+Neste novo projeto deverá ser possível fazer o cadastramento e login de pessoa usuária, onde apenas esse usúario poderá acessar, modificar e deletar as receitas que cadastrou.
 
 ---
 
@@ -55,17 +55,17 @@ Você vai desenvolver todas as camadas da aplicação (Models, Service e Control
 
 Através dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados: Criação, Leitura, Atualização e Exclusão (ou `CRUD`, pros mais íntimos 😜).
 
-Para realizar qualquer tipo de alteração no banco de dados (como cadastro, edição ou exclusão de receitas) será necessário autenticar-se. Além disso, os usuários devem poder ser clientes ou administradores. Os clientes apenas poderão disparar ações nas receitas que ele mesmo criou. Já um administrador pode disparar qualquer ação em qualquer receita.
+Para realizar qualquer tipo de alteração no banco de dados (como cadastro, edição ou exclusão de receitas) será necessário autenticar-se. Além disso, as pessoas usuárias devem poder ser clientes ou administradores. Os clientes apenas poderão disparar ações nas receitas que ele mesmo criou. Já um administrador pode disparar qualquer ação em qualquer receita.
 
 A autenticação deverá ser feita via `JWT`.
 
-O código para cadastro de usuários deve ser criado por você utilizando os conhecimentos adiquiridos nesse bloco.
+O código para cadastro de pessoas usuárias deve ser criado por você utilizando os conhecimentos adquiridos nesse bloco.
 
 Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload de arquivos fornecido pelo `multer`.
 
 ⚠️ **Dicas Importantes** ⚠️:
 
-- Não haverá front-end nesse projeto, portanto não se preocupe com a visualização, mas apenas com as funcionalidades e organização do código.
+- Não haverá front-end neste projeto, portanto não se preocupe com a visualização, mas apenas com as funcionalidades e organização do código.
 
 - Para permitir que as imagens sejam acessadas através da API, você deve utilizar o middleware `static` do express, da seguinte forma:
 
@@ -131,6 +131,7 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 - Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-cookmaster`
 
 6. Crie um novo `Pull Request` _(PR)_
+
 - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-cookmaster/pulls)
 - Clique no botão verde _"New pull request"_
 - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
@@ -143,9 +144,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ## Durante o desenvolvimento
 
-- Faça `commits` das alterações que você fizer no código regularmente
+- Faça `commits` das alterações que você fizer no código regularmente.
 
-- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto.
 
 - Os comandos que você utilizará com mais frequência são:
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
@@ -190,13 +191,9 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 
 - Retorne os códigos de status corretos (recurso criado, erro de validação, autorização, etc).
 
-###  Utilize o MongoDB como banco de dados
-
-O projeto Cookmaster que você realizou anteriormente utilizava o MySQL como banco de dados. Altere seus `Model`s para que sua aplicação utilize o MongoDB ao invés do MySQL.
-
 ---
 
-Há um arquivo `index.js` no repositório. Não remova, nele, o seguinte trecho de código:
+Há um arquivo `index.js` no repositório. Não remova nele, o seguinte trecho de código:
 
 ```javascript
 app.get('/', (request, response) => {
@@ -302,43 +299,43 @@ Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em exten
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que o campo "name" é obrigatório]**
+- **[Será validado que o campo "name" é obrigatório]**
 
 Se o usuário não tiver o campo "name" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Usuário sem Nome](./public/usuariosemnome.png)
 
-**[Será validado que o campo "email" é obrigatório]**
+- **[Será validado que o campo "email" é obrigatório]**
 
 Se o usuário não tiver o campo "email" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Usuário sem Email](./public/usuariosememail.png)
 
-**[Será validado que não é possível cadastrar usuário com o campo email inválido]**
+- **[Será validado que não é possível cadastrar usuário com o campo email inválido]**
 
 Se o usuário tiver o campo email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Email Inválido](./public/campoemailinvalido.png)
 
-**[Será validado que o campo "senha" é obrigatório]**
+- **[Será validado que o campo "senha" é obrigatório]**
 
 Se o usuário não tiver o campo "senha" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Usuário sem Senha](./public/usuariosemsenha.png)
 
-**[Será validado que o campo "email" é único]**
+- **[Será validado que o campo "email" é único]**
 
 Se o usuário cadastrar o campo "email" com um email que já existe, o resultado retornado deverá ser conforme exibido abaixo, com um status http `409`:
 
 ![Email já Usado](./public/emailjausado.png)
 
-**[Será validado que é possível cadastrar usuário com sucesso]**
+- **[Será validado que é possível cadastrar usuário com sucesso]**
 
 Se o usuário for cadastrado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
 
 ![Usuário Cadastrado](./public/usuariocriadocomsucesso.png)
 
-**[Será validado que é possível ao cadastrar usuário, o valor do campo "role" tenha o valor "user"]**
+- **[Será validado que é possível ao cadastrar usuário, o valor do campo "role" tenha o valor "user"]**
 
 Se o usuário for criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
 
@@ -365,31 +362,31 @@ Se o usuário for criado com sucesso o resultado retornado deverá ser conforme 
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que o campo "email" é obrigatório]**
+- **[Será validado que o campo "email" é obrigatório]**
 
 Se o login não tiver o campo "email" o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Usuário sem Senha](./public/loginsememail.png)
 
-**[Será validado que o campo "password" é obrigatório]**
+- **[Será validado que o campo "password" é obrigatório]**
 
 Se o login não tiver o campo "password" o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Usuário sem Senha](./public/loginsemsenha.png)
 
-**[Será validado que não é possível fazer login com um email inválido]**
+- **[Será validado que não é possível fazer login com um email inválido]**
 
 Se o login tiver o email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Email Inválido](./public/loginemailinvalido.png)
 
-**[Será validado que não é possível fazer login com uma senha inválida]**
+- **[Será validado que não é possível fazer login com uma senha inválida]**
 
 Se o login tiver a senha inválida o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Senha Inválida](./public/loginsenhainvalida.png)
 
-**[Será validado que é possível fazer login com sucesso]**
+- **[Será validado que é possível fazer login com sucesso]**
 
 Se foi feito login com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `200`:
 
@@ -421,31 +418,31 @@ Se foi feito login com sucesso o resultado retornado deverá ser conforme exibid
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que não é possível cadastrar receita sem o campo "name"]**
+- **[Será validado que não é possível cadastrar receita sem o campo "name"]**
 
 Se a receita não tiver o campo "name" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Receita sem nome](./public/receitasemnome.png)
 
-**[Será validado que não é possível cadastrar receita sem o campo "ingredients"]**
+- **[Será validado que não é possível cadastrar receita sem o campo "ingredients"]**
 
 Se a receita não tiver o campo "ingredients" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Receita sem ingrediente](./public/receitasemingrediente.png)
 
-**[Será validado que não é possível cadastrar receita sem o campo "preparation"]**
+- **[Será validado que não é possível cadastrar receita sem o campo "preparation"]**
 
 Se a receita não tiver o campo "preparation" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Receita sem preparo](./public/receitasempreparo.png)
 
-**[Será validado que não é possível cadastrar uma receita com token invalido]**
+- **[Será validado que não é possível cadastrar uma receita com token invalido]**
 
 Se a receita não tiver o token válido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Receita com token inválido](./public/tokeninvalidoreq3.png)
 
-**[Será validado que é possível cadastrar uma receita com sucesso]**
+- **[Será validado que é possível cadastrar uma receita com sucesso]**
 
 O resultado retornado para cadastrar a receita com sucesso deverá ser conforme exibido abaixo, com um status http `201`:
 
@@ -459,13 +456,13 @@ O resultado retornado para cadastrar a receita com sucesso deverá ser conforme 
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que é possível listar todas as receitas sem estar autenticado]**
+- **[Será validado que é possível listar todas as receitas sem estar autenticado]**
 
 O resultado retornado para listar receitas com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Receita com Sucesso](./public/listarreceitas.png)
 
-**[Será validado que é possível listar todas as receitas estando autenticado]**
+- **[Será validado que é possível listar todas as receitas estando autenticado]**
 
 O resultado retornado para listar receitas com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
@@ -479,19 +476,19 @@ O resultado retornado para listar receitas com sucesso deverá ser conforme exib
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que é possível listar uma receita específica sem estar autenticado]**
+- **[Será validado que é possível listar uma receita específica sem estar autenticado]**
 
 O resultado retornado para listar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Listar uma Receita](./public/listarumareceita.png)
 
-**[Será validado que é possível listar uma receita específica estando autenticado]**
+- **[Será validado que é possível listar uma receita específica estando autenticado]**
 
 O resultado retornado para listar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Listar uma Receita](./public/listarumareceita.png)
 
-**[Será validado que não é possível listar uma receita que não existe]**
+- **[Será validado que não é possível listar uma receita que não existe]**
 
 O resultado retornado para listar uma receita que não existe deverá ser conforme exibido abaixo, com um status http `404`:
 
@@ -503,11 +500,11 @@ Crie um arquivo `seed.js` na raiz do projeto com uma query do Mongo DB capaz de 
 
 `{ name: 'admin', email: 'root@email.com', password: 'admin', role: 'admin' }`
 
-Obs.: Esse usuário tem o poder de criar, deletar, atualizar ou remover qualquer receita, independente de quem a cadastrou. Isso será solicitado ao longo dos próximos requisitos.
+**Obs.:** Esse usuário tem o poder de criar, deletar, atualizar ou remover qualquer receita, independente de quem a cadastrou. Isso será solicitado ao longo dos próximos requisitos.
 
 ### Além disso, as seguintes verificações serão feitas:    
 
-**[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possivel fazer login]**    
+- **[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possivel fazer login]**    
 
 Será validado no arquivo `seed.js` existe a query para criar um usuário root
 
@@ -531,25 +528,25 @@ Será validado no arquivo `seed.js` existe a query para criar um usuário root
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que não é possível editar receita sem estar autenticado]**
+- **[Será validado que não é possível editar receita sem estar autenticado]**
 
 O resultado retornado para editar receita sem autenticação deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Editar uma Receita sem autenticação](./public/editarsemautenticacao.png)
 
-**[Será validado que não é possível editar receita com token inválido]**
+- **[Será validado que não é possível editar receita com token inválido]**
 
 O resultado retornado para editar receita com token inválido deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Editar uma Receita com token inválido](./public/editartokeninvalido.png)
 
-**[Será validado que é possível editar receita estando autenticado]**
+- **[Será validado que é possível editar receita estando autenticado]**
 
 O resultado retornado para editar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Editar uma Receita](./public/editarcomsucesso.png)
 
-**[Será validado que é possível editar receita com usuário admin]**
+- **[Será validado que é possível editar receita com usuário admin]**
 
 O resultado retornado para editar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
@@ -565,19 +562,19 @@ O resultado retornado para editar uma receita com sucesso deverá ser conforme e
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que não é possível excluir receita sem estar autenticado]**
+- **[Será validado que não é possível excluir receita sem estar autenticado]**
 
 O resultado retornado para excluir uma receita sem autenticação deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Excluir uma Receita sem autenticação](./public/excluirsemautenticacao.png)
 
-**[Será validado que é possível excluir receita estando autenticado]**
+- **[Será validado que é possível excluir receita estando autenticado]**
 
 O resultado retornado para excluir uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `204`:
 
 ![Excluir uma Receita](./public/excluircomsucesso.png)
 
-**[Será validado que é possível excluir receita com usuário admin]**
+- **[Será validado que é possível excluir receita com usuário admin]**
 
 O resultado retornado para excluir uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `204`:
 
@@ -603,25 +600,25 @@ O resultado retornado para excluir uma receita com sucesso deverá ser conforme 
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que é possível enviar foto com usuário autenticado]**
+- **[Será validado que é possível enviar foto com usuário autenticado]**
 
 O resultado retornado para adicionar uma foto na receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Foto Autenticada](./public/fotocomsucesso.png)
 
-**[Será validado que ao enviar foto, o nome da imagem é alterada para o id da receita]**
+- **[Será validado que ao enviar foto, o nome da imagem é alterada para o id da receita]**
 
 O resultado retornado para adicionar uma foto na receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
 ![Foto Autenticada](./public/fotocomsucesso.png)
 
-**[Será validado que não é possível enviar foto sem estar autenticado]**
+- **[Será validado que não é possível enviar foto sem estar autenticado]**
 
 O resultado retornado para adicionar uma foto na receita com sucesso deverá ser conforme exibido abaixo, com um status http `401`:
 
 ![Excluir uma Receita](./public/fotonaoautenticada.png)
 
-**[Será validado que é possível enviar foto com usuário admin]**
+- **[Será validado que é possível enviar foto com usuário admin]**
 
 O resultado retornado para adicionar uma foto na receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
 
@@ -633,7 +630,7 @@ O resultado retornado para adicionar uma foto na receita com sucesso deverá ser
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que é retornada uma imagem como resposta]**
+- **[Será validado que é retornada uma imagem como resposta]**
 
 O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
@@ -662,13 +659,13 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 ### Além disso, as seguintes verificações serão feitas:
 
-**[Será validado que não é possível cadastrar um usuário admin, sem estar autenticado como um usuário admin]**
+- **[Será validado que não é possível cadastrar um usuário admin, sem estar autenticado como um usuário admin]**
 
 Se o usuário admin não é criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `403`:
 
 ![Criar usuário sem ser admin](./public/soadmincria.png)
 
-**[Será validado que é possível cadastrar um usuário admin]**
+- **[Será validado que é possível cadastrar um usuário admin]**
 
 Se o usuário admin é criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
 
