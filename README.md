@@ -22,8 +22,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
     - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Como desenvolver](#como-desenvolver)
-  - [⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️](#️-leia-os-atentamente-e-siga-à-risca-o-que-for-pedido-️)
-    - [👀 Observações importantes:](#-observações-importantes)
     - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
     - [Conexão com o Banco:](#conexão-com-o-banco)
     - [Tabelas](#tabelas)
@@ -218,9 +216,9 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 
 # Como desenvolver
 
-## ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
+**⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️**
 
-### 👀 Observações importantes:
+**👀 Observações importantes:**
 
 O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
