@@ -22,9 +22,9 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Como desenvolver](#como-desenvolver)
-    - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
-    - [Conexão com o Banco:](#conexão-com-o-banco)
-    - [Tabelas](#tabelas)
+  - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
+  - [Conexão com o Banco](#conexão-com-o-banco)
+  - [Tabelas](#tabelas)
   - [Linter](#linter)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
@@ -222,7 +222,7 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 
 O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
-###  Todos os seus endpoints devem estar no padrão REST
+##  Todos os seus endpoints devem estar no padrão REST
 
 - Use os verbos HTTP adequados para cada operação.
 
@@ -244,7 +244,7 @@ app.get('/', (request, response) => {
 
 Isso está configurado para o avaliador funcionar.
 
-### Conexão com o Banco:
+## Conexão com o Banco
 
 A conexão do banco local deverá conter os seguintes parâmetros:
 
@@ -260,7 +260,7 @@ const MONGO_DB_URL = 'mongodb://mongodb:27017/Cookmaster';
 const DB_NAME = 'Cookmaster';
 ```
 
-### Tabelas
+## Tabelas
 
 O banco terá duas tabelas: usuários e receitas.
 
