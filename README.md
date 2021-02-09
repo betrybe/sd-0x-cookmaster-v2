@@ -20,7 +20,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-    - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Como desenvolver](#como-desenvolver)
     - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
     - [Conexão com o Banco:](#conexão-com-o-banco)
@@ -198,7 +198,7 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-### Depois de terminar o desenvolvimento
+## Depois de terminar o desenvolvimento
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
