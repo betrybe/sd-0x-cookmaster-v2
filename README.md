@@ -75,7 +75,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 Você vai desenvolver seu app utilizando a arquitetura MSC!
 
-Neste novo projeto deverá ser possível fazer o cadastramento e login de pessoa usuária, onde apenas esse usúario poderá acessar, modificar e deletar as receitas que cadastrou.
+Neste novo projeto deverá ser possível fazer o cadastro e login de pessoa usuária, onde apenas esse usúario poderá acessar, modificar e deletar as receitas que cadastrou.
 
 ---
 
@@ -209,7 +209,7 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 
 **👀 Observações importantes:**
 
-O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
+ - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
 ##  Todos os seus endpoints devem estar no padrão REST
 
