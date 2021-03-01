@@ -24,7 +24,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Como desenvolver](#como-desenvolver)
   - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
   - [Conexão com o Banco](#conexão-com-o-banco)
-  - [Tabelas](#tabelas)
+  - [Coleções](#Coleções)
   - [Linter](#linter)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
@@ -251,11 +251,11 @@ const DB_NAME = 'Cookmaster';
 
 ## Coleções
 
-O banco terá duas tabelas: usuários e receitas.
+O banco terá duas coleções: usuários e receitas.
 
-A tabela de usuários deverá ter o seguinte nome: `users`.
+A coleção de usuários deverá ter o seguinte nome: `users`.
 
-Os campos da tabela `users` terão este formato:
+Os campos da coleção `users` terão este formato:
 
 ```json
 { "name" : "Erick Jacquin", "email" : "erickjacquin@gmail.com", "password" : "12345678", "role" : "user" }
@@ -268,9 +268,9 @@ A resposta do insert para ser retornada após a criação é esta:
 ```
 (O _id será gerado automaticamente pelo mongodb)
 
-A tabela de receitas deverá ter o seguinte nome: `recipes`.
+A coleção de receitas deverá ter o seguinte nome: `recipes`.
 
-Os campos da tabela `recipes` terão este formato:
+Os campos da coleção `recipes` terão este formato:
 
 ```json
 { "name" : "Receita do Jacquin", "ingredients" : "Frango", "preparation" : "10 minutos no forno" }
