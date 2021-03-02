@@ -20,26 +20,28 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Como desenvolver](#como-desenvolver)
   - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
   - [Conexão com o Banco](#conexão-com-o-banco)
-  - [Coleções](#Coleções)
+  - [Tabelas](#tabelas)
   - [Linter](#linter)
+  - [Testes](#testes)
+    - [Dica: desativando testes](#dica-desativando-testes)
 - [Requisitos do projeto](#requisitos-do-projeto)
-  - [Lista de requisitos](#lista-de-requisitos)
-    - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
-    - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
-    - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
-    - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
-    - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
-    - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
-    - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
-    - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
-    - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
-    - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
-  - [Bônus](#bônus)
+    - [Requisitos Obrigatórios](#requisitos-obrigatórios)
+      - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
+      - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
+      - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
+      - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
+      - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
+      - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
+      - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
+      - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
+      - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
+      - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
+  - [Requisitos Bônus](#requisitos-bônus)
     - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
+- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
 
@@ -197,7 +199,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
@@ -249,13 +251,13 @@ const MONGO_DB_URL = 'mongodb://mongodb:27017/Cookmaster';
 const DB_NAME = 'Cookmaster';
 ```
 
-## Coleções
+## Tabelas
 
-O banco terá duas coleções: usuários e receitas.
+O banco terá duas tabelas: usuários e receitas.
 
-A coleção de usuários deverá ter o seguinte nome: `users`.
+A tabela de usuários deverá ter o seguinte nome: `users`.
 
-Os campos da coleção `users` terão este formato:
+Os campos da tabela `users` terão este formato:
 
 ```json
 { "name" : "Erick Jacquin", "email" : "erickjacquin@gmail.com", "password" : "12345678", "role" : "user" }
@@ -268,9 +270,9 @@ A resposta do insert para ser retornada após a criação é esta:
 ```
 (O _id será gerado automaticamente pelo mongodb)
 
-A coleção de receitas deverá ter o seguinte nome: `recipes`.
+A tabela de receitas deverá ter o seguinte nome: `recipes`.
 
-Os campos da coleção `recipes` terão este formato:
+Os campos da tabela `recipes` terão este formato:
 
 ```json
 { "name" : "Receita do Jacquin", "ingredients" : "Frango", "preparation" : "10 minutos no forno" }
@@ -299,11 +301,60 @@ Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
+## Testes
+
+Todos os requisitos do projeto serão testados **automaticamente**. Cada `endpoint` possui vários requisitos e os testes para cada requisito de um `endpoint` estão no arquivo de teste correspondente.
+
+_**Por exemplo**: Os requisitos relacionados ao `endpoint` `/users` estão no arquivo `users.test.js`._
+
+Para executar os testes localmente, digite no terminal o comando `npm test`.
+
+Inicialmente todos os testes falharão:
+
+![Todos os testes falharão](./public/all-tests-fail.jpeg)
+
+### Dica: desativando testes
+
+Especialmente no início, quando a maioria dos testes está falhando, a saída após executar os testes é bastante poluída. Você pode desabilitar temporariamente um teste utilizando a função `skip` junto à função `it`. Como o nome indica, esta função "pula" um teste:
+
+```js
+  it.skip('Será validado que o campo "email" é obrigatório', async () => {
+    await frisby
+      .post(`${url}/users/`,
+        {
+          name: 'Erick Jacquin',
+          password: '12345678',
+        })
+      .expect('status', 400)
+      .then((response) => {
+        const { body } = response;
+        const result = JSON.parse(body);
+        expect(result.message).toBe('Invalid entries. Try again.');
+      });
+  })
+```
+
+Uma estratégia é pular todos os testes no início e ir implementando um teste de cada vez, removendo dele a função `skip`.
+
+![Testando um arquivo específico](./public/skip-tests.jpeg)
+
+Você também pode rodar apenas um arquivo de teste, por exemplo:
+
+```bash
+npm test users.test.js
+```
+
+![Testando um arquivo específico](./public/running-one-test-file.jpeg)
+
+⚠️ Lembre-se de não entregar o projeto com nenhum teste ignorado. **Testes ignorados serão tratados como testes falhando**. ⚠️
+
+⚠️ **Não apague, em hipótese alguma, qualquer teste ou arquivo deste repositório**. ⚠️
+
 ---
 
 # Requisitos do projeto
 
-## Lista de requisitos
+## Requisitos Obrigatórios
 
 ### 1 - Crie um endpoint para o cadastro de usuários
 
@@ -666,8 +717,7 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 ![Foto Autenticada](./public/imagemrecetornada.png)
 
-
-## Bônus
+## Requisitos Bônus
 
 ### 11 - Cadastramento de admin
 
@@ -703,6 +753,22 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 ---
 
+## Depois de terminar o desenvolvimento (opcional)
+
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
 # Revisando um pull request
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
@@ -715,6 +781,6 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
