@@ -41,8 +41,20 @@
       "bonus": false
     },
     {
-      "description": "11 - Cadastramento de admin",
+      "description": "11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`",
+      "bonus": false
+    },
+    {
+      "description": "12 - Cadastramento de admin",
       "bonus": true
+    },
+    {
+      "description": "13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`",
+      "bonus": false
+    },
+    {
+      "description": "14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`",
+      "bonus": false
     }
   ]
 }

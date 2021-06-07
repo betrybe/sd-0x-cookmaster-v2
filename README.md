@@ -12,6 +12,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 # Sumário
 
+- [Boas vindas ao repositório do projeto Cookmaster!](#boas-vindas-ao-repositório-do-projeto-cookmaster)
 - [Habilidades](#habilidades)
 - [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
@@ -23,25 +24,25 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Como desenvolver](#como-desenvolver)
   - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
   - [Conexão com o Banco](#conexão-com-o-banco)
-  - [Coleções](#Coleções)
+  - [Coleções](#coleções)
   - [Linter](#linter)
   - [Testes](#testes)
     - [Dica: desativando testes](#dica-desativando-testes)
 - [Requisitos do projeto](#requisitos-do-projeto)
-    - [Requisitos Obrigatórios](#requisitos-obrigatórios)
-      - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
-      - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
-      - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
-      - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
-      - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
-      - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
-      - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
-      - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
-      - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
-      - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
+  - [Requisitos Obrigatórios](#requisitos-obrigatórios)
+    - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
+    - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
+    - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
+    - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
+    - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
+    - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
+    - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
+    - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
+    - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
+    - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
   - [Requisitos Bônus](#requisitos-bônus)
     - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
-- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
 
@@ -77,7 +78,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 Você vai desenvolver seu app utilizando a arquitetura MSC!
 
-Neste novo projeto deverá ser possível fazer o cadastro e login de pessoa usuária, onde apenas esse usúario poderá acessar, modificar e deletar as receitas que cadastrou.
+Neste novo projeto deverá ser possível fazer o cadastro e login de pessoa usuária, onde apenas esse usuário poderá acessar, modificar e deletar as receitas que cadastrou.
 
 ---
 
@@ -210,15 +211,14 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-Há um arquivo `index.js` no repositório. Não remova nele, o seguinte trecho de código:
+Há dois arquivos em `./src/api/` no repositório: `server.js` e `app.js`. Em `app.js` o seguinte trecho de código não deve ser removido:
 
 ```javascript
 app.get('/', (request, response) => {
   response.send();
 });
 ```
-
-Isso está configurado para o avaliador funcionar.
+Isso está configurado para o avaliador funcionar corretamente.
 
 ## Conexão com o Banco
 
@@ -568,7 +568,7 @@ Crie um arquivo `seed.js` na raiz do projeto com uma query do Mongo DB capaz de 
 
 **Além disso, as seguintes verificações serão feitas:**
 
-- **[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possivel fazer login]**    
+- **[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possível fazer login]**    
 
 Será validado no arquivo `seed.js` existe a query para criar um usuário root
 
