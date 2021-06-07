@@ -7,7 +7,7 @@ const exec = promisify(require('child_process').exec);
 let testResults;
 
 beforeAll(async () =>{
-  await exec(`npm run dev:test:coverage &> /dev/null`);
+  await exec(`npm run dev:test:coverage:json &> /dev/null`);
   
   const path = resolve("coverage", "coverage-summary.json");
   
