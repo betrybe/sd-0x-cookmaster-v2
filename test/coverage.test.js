@@ -11,20 +11,14 @@ beforeAll(async () =>{
   
   const path = resolve("coverage", "coverage-summary.json");
   
-  const pct = await readFile(path, "utf-8")
+  const lines = await readFile(path, "utf-8")
     .then((coverageTxt) => JSON.parse(coverageTxt))
-    .then(
-      ({
-        total: {
-          lines: { pct },
-        },
-      }) => isNaN(pct) ? 0 : Number(pct)
-    )
-    .catch(() => 0);
+    .then(({ total: { lines } }) => lines )
+    .catch(() => {});
 
   testResults = {
     path,
-    pct,
+    lines,
   };
 });
 
