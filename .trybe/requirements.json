@@ -50,11 +50,11 @@
     },
     {
       "description": "13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`",
-      "bonus": false
+      "bonus": true
     },
     {
       "description": "14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`",
-      "bonus": false
+      "bonus": true
     }
   ]
 }
