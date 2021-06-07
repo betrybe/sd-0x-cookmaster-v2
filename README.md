@@ -40,8 +40,11 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
     - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
     - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
+    - [11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`](#11---crie-testes-de-integração-que-cubram-no-mínimo-30-dos-arquivos-em-src)
   - [Requisitos Bônus](#requisitos-bônus)
-    - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
+    - [12 - Cadastramento de admin](#12---cadastramento-de-admin)
+    - [13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`](#13---crie-testes-de-integração-que-cubram-no-mínimo-60-dos-arquivos-em-src)
+    - [14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`](#14---crie-testes-de-integração-que-cubram-no-mínimo-90-dos-arquivos-em-src)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
@@ -702,9 +705,29 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 ![Foto Autenticada](./public/imagemrecetornada.png)
 
+### 11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`
+
+- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
+
+- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
+
+- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
+
+- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
+
+- Para rodar os testes, utilize o comando `npm run dev:test`;
+
+- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
+
+**Além disso, as seguintes verificações serão feitas:**
+
+- **[Será validado que o teste cobre o valor esperado]**
+
+O resultado do percentual total de cobertura deve ser igual ou maior que `30`.
+
 ## Requisitos Bônus
 
-### 11 - Cadastramento de admin
+### 12 - Cadastramento de admin
 
 - A rota deve ser (`/users/admin`).
 
@@ -735,6 +758,46 @@ Se o usuário admin não é criado com sucesso o resultado retornado deverá ser
 Se o usuário admin é criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
 
 ![Criar admin](./public/criaradmin.png)
+
+### 13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`
+
+- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
+
+- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
+
+- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
+
+- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
+
+- Para rodar os testes, utilize o comando `npm run dev:test`;
+
+- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
+
+**Além disso, as seguintes verificações serão feitas:**
+
+- **[Será validado que o teste cobre o valor esperado]**
+
+O resultado do percentual total de cobertura deve ser igual ou maior que `60`.
+
+### 14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`
+
+- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
+
+- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
+
+- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
+
+- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
+
+- Para rodar os testes, utilize o comando `npm run dev:test`;
+
+- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
+
+**Além disso, as seguintes verificações serão feitas:**
+
+- **[Será validado que o teste cobre o valor esperado]**
+
+O resultado do percentual total de cobertura deve ser igual ou maior que `90`.
 
 ---
 
