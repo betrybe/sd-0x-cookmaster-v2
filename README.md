@@ -718,7 +718,6 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
 - Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
@@ -773,7 +772,6 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
 - Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
@@ -793,7 +791,6 @@ O resultado do numero total de linhas cobertas deve ser igual ou maior que `100`
 - O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
-
 
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
