@@ -40,11 +40,11 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
     - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
     - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
-    - [11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`](#11---crie-testes-de-integração-que-cubram-no-mínimo-30-dos-arquivos-em-src)
+    - [11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`, com um mínimo de 50 linhas cobertas](#11---crie-testes-de-integração-que-cubram-no-mínimo-30-dos-arquivos-em-src-com-um-mínimo-de-50-linhas-cobertas)
   - [Requisitos Bônus](#requisitos-bônus)
     - [12 - Cadastramento de admin](#12---cadastramento-de-admin)
-    - [13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`](#13---crie-testes-de-integração-que-cubram-no-mínimo-60-dos-arquivos-em-src)
-    - [14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`](#14---crie-testes-de-integração-que-cubram-no-mínimo-90-dos-arquivos-em-src)
+    - [13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`, com um mínimo de 100 linhas cobertas](#13---crie-testes-de-integração-que-cubram-no-mínimo-60-dos-arquivos-em-src-com-um-mínimo-de-100-linhas-cobertas)
+    - [14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`, com um mínimo de 150 linhas cobertas](#14---crie-testes-de-integração-que-cubram-no-mínimo-90-dos-arquivos-em-src-com-um-mínimo-de-150-linhas-cobertas)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
@@ -705,7 +705,7 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 ![Foto Autenticada](./public/imagemrecetornada.png)
 
-### 11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`
+### 11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`, com um mínimo de 50 linhas cobertas
 
 - Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
 
@@ -723,7 +723,9 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 - **[Será validado que o teste cobre o valor esperado]**
 
-O resultado do percentual total de cobertura deve ser igual ou maior que `30`.
+Nenhum teste pode ser pulado;
+O resultado do percentual total de cobertura deve ser igual ou maior que `30`;
+O resultado do numero total de linhas cobertas deve ser igual ou maior que `50`.
 
 ## Requisitos Bônus
 
@@ -759,7 +761,7 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 ![Criar admin](./public/criaradmin.png)
 
-### 13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`
+### 13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`, com um mínimo de 100 linhas cobertas
 
 - Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
 
@@ -777,9 +779,11 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 - **[Será validado que o teste cobre o valor esperado]**
 
-O resultado do percentual total de cobertura deve ser igual ou maior que `60`.
+Nenhum teste pode ser pulado;
+O resultado do percentual total de cobertura deve ser igual ou maior que `60`;
+O resultado do numero total de linhas cobertas deve ser igual ou maior que `100`.
 
-### 14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`
+### 14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`, com um mínimo de 150 linhas cobertas
 
 - Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
 
@@ -797,7 +801,9 @@ O resultado do percentual total de cobertura deve ser igual ou maior que `60`.
 
 - **[Será validado que o teste cobre o valor esperado]**
 
-O resultado do percentual total de cobertura deve ser igual ou maior que `90`.
+Nenhum teste pode ser pulado;
+O resultado do percentual total de cobertura deve ser igual ou maior que `90`;
+O resultado do numero total de linhas cobertas deve ser igual ou maior que `150`.
 
 ---
 
