@@ -103,6 +103,8 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - Não haverá front-end neste projeto, portanto não se preocupe com a visualização, mas apenas com as funcionalidades e organização do código.
 
+- Sua API deve ser desenvolvida dentro da pasta `./src`, seus testes de integração, na pasta `./src/integration-tests`;
+
 - Para permitir que as imagens sejam acessadas através da API, você deve utilizar o middleware `static` do express, da seguinte forma:
 
   ```js
@@ -201,8 +203,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 **👀 Observações importantes:**
 
- - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
- - O projeto deve rodar na porta **3000**
+ - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação;
+ - O projeto deve rodar na porta **3000**;
+ - A testagem local depende da API estar rodando (utilize `npm run dev` para facilitar o processo);
 
 ##  Todos os seus endpoints devem estar no padrão REST
 
@@ -216,7 +219,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-Há dois arquivos em `./src/api/` no repositório: `server.js` e `app.js`. Em `app.js` o seguinte trecho de código não deve ser removido:
+Há dois arquivos em `./src/api/` no repositório: `server.js` e `app.js`, ambos não devem ser renomeados ou apagados. 
+
+Em `app.js` o seguinte trecho de código não deve ser removido:
 
 ```javascript
 app.get('/', (request, response) => {
