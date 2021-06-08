@@ -81,7 +81,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 Você vai desenvolver seu app utilizando a arquitetura MSC!
 
-Neste novo projeto deverá ser possível fazer o cadastro e login de pessoa usuária, onde apenas esse usuário poderá acessar, modificar e deletar as receitas que cadastrou.
+Neste novo projeto deverá ser possível fazer o cadastro e login de pessoas usuárias, onde apenas essas pessoas poderão acessar, modificar e deletar as receitas que cadastrou.
 
 ---
 
@@ -102,6 +102,8 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 ⚠️ **Dicas Importantes** ⚠️:
 
 - Não haverá front-end neste projeto, portanto não se preocupe com a visualização, mas apenas com as funcionalidades e organização do código.
+
+- Sua API deve ser desenvolvida dentro da pasta `./src`, seus testes de integração, na pasta `./src/integration-tests`;
 
 - Para permitir que as imagens sejam acessadas através da API, você deve utilizar o middleware `static` do express, da seguinte forma:
 
@@ -201,8 +203,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 **👀 Observações importantes:**
 
- - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
- - O projeto deve rodar na porta **3000**
+ - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação;
+ - O projeto deve rodar na porta **3000**;
+ - A testagem local depende da API estar rodando (utilize `npm run dev` para facilitar o processo);
 
 ##  Todos os seus endpoints devem estar no padrão REST
 
@@ -216,7 +219,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-Há dois arquivos em `./src/api/` no repositório: `server.js` e `app.js`. Em `app.js` o seguinte trecho de código não deve ser removido:
+Há dois arquivos em `./src/api/` no repositório: `server.js` e `app.js`, ambos não devem ser renomeados ou apagados. 
+
+Em `app.js` o seguinte trecho de código não deve ser removido:
 
 ```javascript
 app.get('/', (request, response) => {
@@ -713,8 +718,6 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
-
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
 - Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
@@ -769,8 +772,6 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
-
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
 - Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
@@ -790,8 +791,6 @@ O resultado do numero total de linhas cobertas deve ser igual ou maior que `100`
 - O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
-
-- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
 
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
