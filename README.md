@@ -81,7 +81,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 Você vai desenvolver seu app utilizando a arquitetura MSC!
 
-Neste novo projeto deverá ser possível fazer o cadastro e login de pessoa usuária, onde apenas esse usuário poderá acessar, modificar e deletar as receitas que cadastrou.
+Neste novo projeto deverá ser possível fazer o cadastro e login de pessoas usuárias, onde apenas essas pessoas poderão acessar, modificar e deletar as receitas que cadastrou.
 
 ---
 
@@ -718,7 +718,6 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
 
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
@@ -774,7 +773,6 @@ Se o usuário admin é criado com sucesso o resultado retornado deverá ser conf
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
 
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
@@ -796,7 +794,6 @@ O resultado do numero total de linhas cobertas deve ser igual ou maior que `100`
 
 - Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
 
-- O projeto já conta com as principais bibliotecas utilizadas: `mocha`, `chai`, `sinon`, `chai-http`;
 
 - Para rodar os testes, utilize o comando `npm run dev:test`;
 
