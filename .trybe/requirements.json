@@ -41,7 +41,19 @@
       "bonus": false
     },
     {
-      "description": "11 - Cadastramento de admin",
+      "description": "11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`, com um mínimo de 50 linhas cobertas",
+      "bonus": false
+    },
+    {
+      "description": "12 - Cadastramento de admin",
+      "bonus": true
+    },
+    {
+      "description": "13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`, com um mínimo de 100 linhas cobertas",
+      "bonus": true
+    },
+    {
+      "description": "14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`, com um mínimo de 150 linhas cobertas",
       "bonus": true
     }
   ]

@@ -284,8 +284,12 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
+.vscode
 
 # Windows shortcuts
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,windows,linux,visualstudiocode,intellij
+
+**/uploads/*
+!**/uploads/ratinho.jpg

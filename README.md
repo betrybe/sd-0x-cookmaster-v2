@@ -12,6 +12,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 # Sumário
 
+- [Boas vindas ao repositório do projeto Cookmaster!](#boas-vindas-ao-repositório-do-projeto-cookmaster)
 - [Habilidades](#habilidades)
 - [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
@@ -23,25 +24,28 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Como desenvolver](#como-desenvolver)
   - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
   - [Conexão com o Banco](#conexão-com-o-banco)
-  - [Coleções](#Coleções)
+  - [Coleções](#coleções)
   - [Linter](#linter)
   - [Testes](#testes)
     - [Dica: desativando testes](#dica-desativando-testes)
 - [Requisitos do projeto](#requisitos-do-projeto)
-    - [Requisitos Obrigatórios](#requisitos-obrigatórios)
-      - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
-      - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
-      - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
-      - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
-      - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
-      - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
-      - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
-      - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
-      - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
-      - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
+  - [Requisitos Obrigatórios](#requisitos-obrigatórios)
+    - [1 - Crie um endpoint para o cadastro de usuários](#1---crie-um-endpoint-para-o-cadastro-de-usuários)
+    - [2 - Crie um endpoint para o login de usuários](#2---crie-um-endpoint-para-o-login-de-usuários)
+    - [3 - Crie um endpoint para o cadastro de receitas](#3---crie-um-endpoint-para-o-cadastro-de-receitas)
+    - [4 - Crie um endpoint para a listagem de receitas](#4---crie-um-endpoint-para-a-listagem-de-receitas)
+    - [5 - Crie um endpoint para visualizar uma receita específica](#5---crie-um-endpoint-para-visualizar-uma-receita-específica)
+    - [6 - Permissões do usuário admin](#6---permissões-do-usuário-admin)
+    - [7 - Crie um endpoint para a edição de uma receita](#7---crie-um-endpoint-para-a-edição-de-uma-receita)
+    - [8 - Crie um endpoint para a exclusão de uma receita](#8---crie-um-endpoint-para-a-exclusão-de-uma-receita)
+    - [9 - Crie um endpoint para a adição de uma imagem a uma receita](#9---crie-um-endpoint-para-a-adição-de-uma-imagem-a-uma-receita)
+    - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
+    - [11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`, com um mínimo de 50 linhas cobertas](#11---crie-testes-de-integração-que-cubram-no-mínimo-30-dos-arquivos-em-src-com-um-mínimo-de-50-linhas-cobertas)
   - [Requisitos Bônus](#requisitos-bônus)
-    - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
-- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
+    - [12 - Cadastramento de admin](#12---cadastramento-de-admin)
+    - [13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`, com um mínimo de 100 linhas cobertas](#13---crie-testes-de-integração-que-cubram-no-mínimo-60-dos-arquivos-em-src-com-um-mínimo-de-100-linhas-cobertas)
+    - [14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`, com um mínimo de 150 linhas cobertas](#14---crie-testes-de-integração-que-cubram-no-mínimo-90-dos-arquivos-em-src-com-um-mínimo-de-150-linhas-cobertas)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
 
@@ -77,7 +81,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 Você vai desenvolver seu app utilizando a arquitetura MSC!
 
-Neste novo projeto deverá ser possível fazer o cadastro e login de pessoa usuária, onde apenas esse usúario poderá acessar, modificar e deletar as receitas que cadastrou.
+Neste novo projeto deverá ser possível fazer o cadastro e login de pessoas usuárias, onde apenas essas pessoas poderão acessar, modificar e deletar as receitas que cadastrou.
 
 ---
 
@@ -99,15 +103,20 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 - Não haverá front-end neste projeto, portanto não se preocupe com a visualização, mas apenas com as funcionalidades e organização do código.
 
+- Sua API deve ser desenvolvida dentro da pasta `./src`, seus testes de integração, na pasta `./src/integration-tests`;
+
 - Para permitir que as imagens sejam acessadas através da API, você deve utilizar o middleware `static` do express, da seguinte forma:
 
   ```js
+  // ./src/api/app.js
+
   const path = require('path');
   // ...
 
-  // /images é o caminho da API onde as imagens estarão disponíveis
-  // path.join(__dirname, 'uploads') é o caminho da pasta onde o multer salva suas imagens ao realizar o upload
-  app.use('/images', express.static(path.join(__dirname, 'uploads')));
+  // /images é o caminho/end-point da API onde as imagens estarão disponíveis
+  // path.join(__dirname, '..', 'uploads') é o caminho da pasta onde o multer deve salvar suas imagens ao realizar o upload
+  // a pasta `uploads` está em `./src/uploads` e não deve ser renomeada ou removida (assim como o arquivo `ratinho.jpg`)
+  app.use('/images', express.static(path.join(__dirname, '..', 'uploads')));
 
   // ...
   ```
@@ -195,8 +204,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 **👀 Observações importantes:**
 
- - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
- - O projeto deve rodar na porta **3000**
+ - O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação;
+ - O projeto deve rodar na porta **3000**;
+ - A testagem local depende da API estar rodando (utilize `npm run dev` para facilitar o processo);
 
 ##  Todos os seus endpoints devem estar no padrão REST
 
@@ -210,15 +220,16 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ---
 
-Há um arquivo `index.js` no repositório. Não remova nele, o seguinte trecho de código:
+Há dois arquivos em `./src/api/` no repositório: `server.js` e `app.js`, ambos não devem ser renomeados ou apagados. 
+
+Em `app.js` o seguinte trecho de código não deve ser removido:
 
 ```javascript
 app.get('/', (request, response) => {
   response.send();
 });
 ```
-
-Isso está configurado para o avaliador funcionar.
+Isso está configurado para o avaliador funcionar corretamente.
 
 ## Conexão com o Banco
 
@@ -568,7 +579,7 @@ Crie um arquivo `seed.js` na raiz do projeto com uma query do Mongo DB capaz de 
 
 **Além disso, as seguintes verificações serão feitas:**
 
-- **[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possivel fazer login]**    
+- **[Será validado que o projeto tem um arquivo de seed, com um comando para inserir um usuário root e verifico que é possível fazer login]**    
 
 Será validado no arquivo `seed.js` existe a query para criar um usuário root
 
@@ -700,9 +711,29 @@ O resultado retornado deverá ser do tipo imagem, com um status http `200`:
 
 ![Foto Autenticada](./public/imagemrecetornada.png)
 
+### 11 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`, com um mínimo de 50 linhas cobertas
+
+- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
+
+- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
+
+- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
+
+- Para rodar os testes, utilize o comando `npm run dev:test`;
+
+- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
+
+**Além disso, as seguintes verificações serão feitas:**
+
+- **[Será validado que o teste cobre o valor esperado]**
+
+Nenhum teste pode ser pulado;
+O resultado do percentual total de cobertura deve ser igual ou maior que `30`;
+O resultado do numero total de linhas cobertas deve ser igual ou maior que `50`.
+
 ## Requisitos Bônus
 
-### 11 - Cadastramento de admin
+### 12 - Cadastramento de admin
 
 - A rota deve ser (`/users/admin`).
 
@@ -733,6 +764,46 @@ Se o usuário admin não é criado com sucesso o resultado retornado deverá ser
 Se o usuário admin é criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
 
 ![Criar admin](./public/criaradmin.png)
+
+### 13 - Crie testes de integração que cubram no mínimo 60% dos arquivos em `src`, com um mínimo de 100 linhas cobertas
+
+- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
+
+- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
+
+- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
+
+- Para rodar os testes, utilize o comando `npm run dev:test`;
+
+- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
+
+**Além disso, as seguintes verificações serão feitas:**
+
+- **[Será validado que o teste cobre o valor esperado]**
+
+Nenhum teste pode ser pulado;
+O resultado do percentual total de cobertura deve ser igual ou maior que `60`;
+O resultado do numero total de linhas cobertas deve ser igual ou maior que `100`.
+
+### 14 - Crie testes de integração que cubram no mínimo 90% dos arquivos em `src`, com um mínimo de 150 linhas cobertas
+
+- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
+
+- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
+
+- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
+
+- Para rodar os testes, utilize o comando `npm run dev:test`;
+
+- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
+
+**Além disso, as seguintes verificações serão feitas:**
+
+- **[Será validado que o teste cobre o valor esperado]**
+
+Nenhum teste pode ser pulado;
+O resultado do percentual total de cobertura deve ser igual ou maior que `90`;
+O resultado do numero total de linhas cobertas deve ser igual ou maior que `150`.
 
 ---
 
