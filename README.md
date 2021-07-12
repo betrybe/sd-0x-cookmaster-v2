@@ -373,6 +373,7 @@ npm test users.test.js
     "password": "string"
   }
   ```
+- Não use `bcrypt` ou outra biblioteca para encriptar a senha, para que o avaliador funcione corretamente.
 
 **Além disso, as seguintes verificações serão feitas:**
 
